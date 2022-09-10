@@ -19,9 +19,9 @@ function renderGames(games) {
 			gameCard.dataset.slug = game.slug;
 			gameCard.innerHTML = `<a href="/game/${game.slug}" style="background-image: url(${game.background_image});"><span>${game.name}</span></a>`;
 
-			gamesList.appendChild(gameCard);
+			gamesContainer.appendChild(gameCard);
 		});
-		gamesContainer.appendChild(gamesList);
+		// gamesContainer.appendChild(gamesList);
 	}
 }
 // fetch develoeprs from api

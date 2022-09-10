@@ -3,10 +3,9 @@ extends ../../layouts/core.pug
 block content
     div(class="game-container")
         h1(class="game-header") #{name}
-        p  Release date: #{released}
-        a(href=website) #{website}
-        //- doesnt take you to website link
-        p  Game description: #{description}
-         p  Rating: #{rating}
-        img(src=image)  
-        img(src=alternate)
+        p(class="game-desc") Release date: #{released}
+        a(class ="web-link" href=website) #{website}
+        p(class="game-desc")  Game description: #{description}
+        p(class="game-desc")  Rating: #{rating} / 5
+        img(class="game-image" src=image)  
+        img(class="game-image" src=alternate)

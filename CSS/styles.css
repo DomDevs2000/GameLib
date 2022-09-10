@@ -88,10 +88,42 @@ body {
 	padding: 15px;
 	border-radius: 5px;
 	margin: 15px;
-
-
 }
 .game-header{
 	border: 1px solid white;
 	border-radius: 15px;
+}
+.game-desc {
+	font-size: 12px
+}
+.game-image {
+	max-width: 500px;
+	max-height: 700px;
+	
+}
+.web-link {
+	padding: 5px;
+}
+
+.genre-container {
+	background-color: #24252a;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 15px;
+	border-radius: 5px;
+	margin: 15px;
+}
+.genre-header{
+	border: 1px solid white;
+	border-radius: 15px;
+}
+.genre-desc {
+	font-size: 12px
+}
+.genre-image {
+	max-width: 500px;
+	max-height: 700px;
+	
 }

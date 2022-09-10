@@ -11,3 +11,7 @@ p {
     padding: 15px;
     border-bottom: 1px solid white;
 }
+
+#games-container, #platforms-container, #genres-container,#developers-container {
+    padding: 20px;
+}

@@ -1,7 +1,7 @@
 extends ../../layouts/core.pug
 block content 
-
-    h1 #{name}
-    h1 #{games_count}
-    p #{description}
-    img(src=image class="genre-image")
+    div(class="genre-container")
+        h1(class="genre-header") #{name}
+        
+        p(class="genre-desc") #{description}
+        img(class="genre-image" src=image class="genre-image")
