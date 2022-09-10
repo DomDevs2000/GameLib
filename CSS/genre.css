@@ -140,8 +140,13 @@
 	
 }
 /* .genre-card ul {
-	
-} */
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid: 150px 150px 150px 150px;
+	grid-gap: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+} */ 
 .genre-card {
 	border: 2px solid rgb(175, 0, 50);
 	font-family: 'Silkscreen';
@@ -167,4 +172,8 @@
 
 .genre-card span {
 	background-color: black;
+}
+
+.card {
+	background-color: red;
 }

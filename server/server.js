@@ -21,18 +21,8 @@ app.get('/login', (req, res) => {
 	res.render('pages/login/login');
 });
 
-// normal file
-// app.get(['/home', '/'], (req, res) => {
-// 	// res.render('Views/layouts/core');
-// 	res.sendFile('index.html', {
-// 		root: path.join(__dirname, '../public'),
-// 	});
-// });
 app.get('/search', (req, res) => {
-	// res.render('Views/layouts/core.pug');
-	res.sendFile('search.html', {
-		root: path.join(__dirname, '../public'),
-	});
+	res.render('pages/search/search');
 });
 
 //fetch and create game route

@@ -98,6 +98,7 @@ function renderGenres(genres) {
 		genreContainer.appendChild(genresList);
 	}
 }
+
 // search function
 const searchBar = document.querySelector('.search-bar');
 
@@ -164,9 +165,8 @@ async function searchRequest(e) {
 	}
 
 	return;
-	//
 }
-
+// debounce
 function debounce(callback, delay) {
 	let timeout;
 	return function (e) {
@@ -177,75 +177,9 @@ function debounce(callback, delay) {
 	};
 }
 
-// searchBar.addEventListener('input', async (e) => {
-// 	let searchField = e.target.value;
-
-// 	document.getElementById('games-container').innerHTML = '';
-// 	document.getElementById('developers-container').innerHTML = '';
-// 	document.getElementById('platforms-container').innerHTML = '';
-// 	document.getElementById('genres-container').innerHTML = '';
-
-// 	//games - filter games by input value
-
-// 	let games = await fetchGames(1, searchField);
-// 	const filteredGames = games.results.filter((game) => {
-// 		const gameSearch = game.name;
-// 		if (gameSearch.toLowerCase().includes(searchField.toLowerCase())) {
-// 			return true;
-// 		}
-
-// 		return false;
-// 	});
-
-// 	//developers
-
-// 	let developer = await fetchDevelopers(1, searchField.value);
-
-// 	const filteredDevelopers = developer.results.filter((developer) => {
-// 		const developerSearch = developer.name;
-// 		if (developerSearch.toLowerCase().includes(searchField.toLowerCase())) {
-// 			return true;
-// 		}
-
-// 		return false;
-// 	});
-// 	// platforms:
-// 	let platform = await fetchPlatforms(1, searchField);
-// 	const filteredPlatforms = platform.results.filter((platform) => {
-// 		const platformSearch = platform.name;
-// 		if (platformSearch.toLowerCase().includes(searchField.toLowerCase())) {
-// 			return true;
-// 		}
-
-// 		return false;
-// 	});
-
-// 	//genres
-// 	let genres = await fetchGenres(1, searchField);
-// 	const filteredGenres = genres.results.filter((genre) => {
-// 		const genreSearch = genre.name;
-// 		if (genreSearch.toLowerCase().includes(searchField.toLowerCase())) {
-// 			return true;
-// 		}
-
-// 		return false;
-// 	});
-// 	//render all params
-// 	if (searchField == '') {
-// 		setTimeout((timeout) => fetchController.abort(), 1000);
-// 	} else {
-// 		renderGames(filteredGames);
-// 		renderDevelopers(filteredDevelopers);
-// 		renderPlatforms(filteredPlatforms);
-// 		renderGenres(filteredGenres);
-// 		return;
-// 	}
-// });
 searchBar.addEventListener('input', debounce(searchRequest, 500));
 
 export { renderGenres };
 export { renderGames };
-// export { getGames };
-
 export { renderDevelopers };
 export { renderPlatforms };
