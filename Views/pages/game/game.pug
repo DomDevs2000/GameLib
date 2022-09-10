@@ -1,0 +1,11 @@
+extends ../../layouts/core.pug
+
+block content
+    h1 #{name}
+    p  Rating: #{rating}
+    a(href=website) #{website}
+    //- doesnt take you to website link
+    p  Game description: #{description}
+    p  Release date: #{released}
+    img(src=image)  
+    img(src=alternate)

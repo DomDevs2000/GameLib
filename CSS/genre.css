@@ -1,0 +1,170 @@
+/* GENRES */
+/* .container-genres {
+	padding-left: 15px;
+	padding-right: 15px;
+	display: grid;
+	grid-gap: 15px;
+	background-size: cover;
+}
+
+.genre-card {
+	cursor: pointer;
+	border: 2px solid rgb(175, 0, 50);
+	padding: 5px;
+	font-family: 'Silkscreen';
+	min-height: 250px;
+	width: inherit;
+	border-radius: 10px;
+	background-size: cover;
+	background-repeat: no-repeat;
+} */
+
+/* GAMES */
+#games-container {
+	padding-left: 15px;
+	padding-right: 15px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid: 150px 150px 150px 150px;
+	grid-gap: 15px;
+}
+
+.game-card {
+	border: 2px solid rgb(175, 0, 50);
+	font-family: 'Silkscreen';
+	background-color: #24252a;
+	min-height: 150px;
+	border-radius: 10px;
+}
+
+.game-card a {
+	display: inherit;
+	min-height: inherit;
+	font-size: 1rem;
+	border-radius: 10px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.game-card span {
+	background-color: black;
+}
+
+/* DEVELOPERS */
+#developers-container {
+	padding-left: 15px;
+	padding-right: 15px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid: 150px 150px 150px 150px;
+	grid-gap: 15px;
+}
+
+.developer-card {
+	cursor: pointer;
+	border: 2px solid blue;
+	border-radius: 10px;
+	font-family: 'Silkscreen';
+	background-color: #24252a;
+	min-height: 150px;
+	width: inherit;
+
+}
+
+
+.developer-card a {
+	display: inherit;
+	min-height: inherit;
+	font-size: 1rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+}
+.developer-card span {
+	background-color: black;
+}
+
+
+
+
+/* platform */
+#platforms-container {
+	padding-left: 15px;
+	padding-right: 15px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid: 150px 150px 150px 150px;
+	grid-gap: 15px;
+}
+
+.platform-card {
+	cursor: pointer;
+	border: 2px solid green;
+	font-family: 'Silkscreen';
+	background-color: #24252a;
+	min-height: 150px;
+	width: inherit;
+	
+	border-radius: 10px;
+}
+
+.platform-card h2 {
+	margin-bottom: 5px;
+	font-size: 1rem;
+	display: inline;
+}
+
+
+.platform-card a {
+	display: inherit;
+	min-height: inherit;
+	font-size: 1rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+}
+
+.platform-card span {
+	background-color: black;
+}
+/* genres */
+#genres-container {
+	
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid: 150px 150px 150px 150px;
+	grid-gap: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	
+}
+/* .genre-card ul {
+	
+} */
+.genre-card {
+	border: 2px solid rgb(175, 0, 50);
+	font-family: 'Silkscreen';
+	background-color: #24252a;
+	min-height: 150px;
+	border-radius: 10px;
+	
+}
+.genre-card h2 {
+	margin-bottom: 5px;
+	font-size: 1rem;
+	display: inline;
+}
+
+.genre-card a {
+	display: inherit;
+	min-height: inherit;
+	font-size: 1rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+.genre-card span {
+	background-color: black;
+}

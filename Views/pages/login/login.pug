@@ -1,0 +1,10 @@
+extends ../../layouts/core.pug
+block content 
+    div(class="hero")
+        div(class="form-box")
+           form(id="login" class="input-group" action="/Signup" method="POST")
+            label(for="name")
+            input(type="name" name="name" class="input-field name" placeholder="username" required)
+            label(for="password")
+            input(type="password" id="password" name="password" class="input-field password" placeholder="Password" required)
+            button(type="submit" class="submit-btn") Sign Up

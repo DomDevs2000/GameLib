@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=Space+Mono&display=swap');
+@import url('./styles/genre.css');
+@import url('/styles/navbar.css');
+/* main css */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Silkscreen';
+}
+body {
+	background-color: black;
+	color: #edf0f1;
+}
+
+
+/* searchbar css */
+.search {
+	display: flex;
+	padding-top: 25px;
+	padding-left: 15px;
+	padding-right: 15px;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 25px;
+	margin: 3px #edf0f1;
+
+}
+
+.search-bar {
+	/* position: sticky; */
+	width: 100%;
+	max-width: 700px;
+	padding: 10px 20px;
+	background:#24252a;
+	border: 1px white;
+	border-radius: 25px;
+	font-size: 20px;
+	color:white;
+	font-family: "Silkscreen";
+	
+	
+}
+
+.search-bar::placeholder {
+	font-size: 16px;
+	color:white;
+	
+
+}
+.search-bar:focus {
+
+	border: rgba(175, 0, 50, 0.9);
+}
+
+.searchBtn {
+	width: 75px;
+	height: 50px;
+	background-color: rgba(175, 0, 50, 1); 
+	color: white;
+	border: none;
+	border-radius: 25px;
+}
+
+.searchBtn:hover {
+	cursor: pointer;
+	background-color: rgba(175, 0, 50, 0.6); ;
+}
+
+
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	border-bottom: 1px white;
+	justify-content: center;
+}
+
+
