@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import { getGamesFromDeveloper } from './apiClient';
 
 const port = process.env.port || 3000;
 const app = express();
@@ -67,8 +66,8 @@ app.get('/developer/:slug', async (req, res) => {
 
 	res.render('pages/developer/developer', {
 		name: `${developer.name}`,
-		games: `${developer.games}`,
-		topgames: `${developer.top_games}`,
+		games: `${developer.games_count}`,
+		gameslist: `${developer.games}`,
 		image: `${developer.image_background}`,
 	});
 });
@@ -122,3 +121,5 @@ app.get('/test', (req, res) => {
 app.get('/home', (req, res) => {
 	res.render('pages/home/home');
 });
+
+module.exports = app;

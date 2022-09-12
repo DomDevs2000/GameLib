@@ -99,8 +99,11 @@ body {
 .game-image {
 	max-width: 500px;
 	max-height: 700px;
-	
+	padding-top: 5px;
+	border: 1px solid white;
+	border-radius: 10px;
 }
+
 .web-link {
 	padding: 5px;
 }
@@ -125,5 +128,6 @@ body {
 .genre-image {
 	max-width: 500px;
 	max-height: 700px;
+	border-radius: 20px;
 	
 }

@@ -4,7 +4,6 @@ export function getGamesFromDeveloper(gameSlug) {
 		return game.slug === gameSlug;
 	});
 	if (game.length) {
-		console.log(gameSlug);
 		return game[0].slug;
 	}
 }
