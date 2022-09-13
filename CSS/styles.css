@@ -88,6 +88,7 @@ body {
 	padding: 15px;
 	border-radius: 5px;
 	margin: 15px;
+	border: 1.5px solid rgb(175, 0, 50)
 }
 .game-header{
 	border: 1px solid white;
@@ -97,13 +98,20 @@ body {
 	font-size: 12px
 }
 .game-image {
-	max-width: 500px;
-	max-height: 700px;
+	width: 500px;
+	height: 300px;
 	padding-top: 5px;
 	border: 1px solid white;
 	border-radius: 10px;
 }
-
+.image-container {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-self: center;
+	align-items: center;
+	
+}
 .web-link {
 	padding: 5px;
 }

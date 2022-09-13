@@ -1,11 +1,13 @@
-extends ../../layouts/corecopy.pug
+extends ../../layouts/core-without-search.pug
 
 block content
     div(class="game-container")
         h1(class="game-header") #{name}
         p(class="game-desc") Release date: #{released}
         a(class ="web-link" href=website) #{website}
-        p(class="game-desc")  Game description: #{description}
+        p(class="game-desc") #{description}
         p(class="game-desc")  Rating: #{rating} / 5
-        img(class="game-image" src=image)  
-        img(class="game-image" src=alternate)
+        h3 Media :
+        div(class="img-container") 
+            img(class="game-image" src=image)  
+            img(class="game-image" src=alternate)

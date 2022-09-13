@@ -3,13 +3,15 @@
 #games-container {
 	padding-left: 15px;
 	padding-right: 15px;
+	
+}
+#games-container ul {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid: 150px 150px 150px 150px;
 	grid-gap: 15px;
 	
 }
-
 .game-card {
 	border: 2px solid rgb(175, 0, 50);
 	font-family: 'Silkscreen';
@@ -36,6 +38,8 @@
 #developers-container {
 	padding-left: 15px;
 	padding-right: 15px;
+}
+#developers-container ul {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid: 150px 150px 150px 150px;
@@ -73,12 +77,15 @@
 #platforms-container {
 	padding-left: 15px;
 	padding-right: 15px;
+	
+}
+
+#platforms-container ul {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid: 150px 150px 150px 150px;
 	grid-gap: 15px;
 }
-
 .platform-card {
 	cursor: pointer;
 	border: 2px solid green;
@@ -111,23 +118,18 @@
 }
 /* genres */
 #genres-container {
-	
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid: 150px 150px 150px 150px;
-	grid-gap: 15px;
+
 	padding-left: 15px;
 	padding-right: 15px;
 	
 }
-/* .genre-card ul {
+#genres-container ul {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid: 150px 150px 150px 150px;
 	grid-gap: 15px;
-	padding-left: 15px;
-	padding-right: 15px;
-} */ 
+}
+
 .genre-card {
 	border: 2px solid rgb(175, 0, 50);
 	font-family: 'Silkscreen';

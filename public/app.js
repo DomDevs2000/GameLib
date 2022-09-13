@@ -18,10 +18,9 @@ function renderGames(games) {
 			gameCard.classList.add('game-card');
 			gameCard.dataset.slug = game.slug;
 			gameCard.innerHTML = `<a href="/game/${game.slug}" style="background-image: url(${game.background_image});"><span>${game.name}</span></a>`;
-
-			gamesContainer.appendChild(gameCard);
+			gamesList.appendChild(gameCard);
 		});
-		// gamesContainer.appendChild(gamesList);
+		gamesContainer.appendChild(gamesList);
 	}
 }
 // fetch develoeprs from api
@@ -176,9 +175,9 @@ function debounce(callback, delay) {
 		}, delay);
 	};
 }
-
-searchBar.addEventListener('input', debounce(searchRequest, 500));
-
+if (searchBar) {
+	searchBar.addEventListener('input', debounce(searchRequest, 300));
+}
 export { renderGenres };
 export { renderGames };
 export { renderDevelopers };

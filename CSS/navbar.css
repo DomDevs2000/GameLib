@@ -31,6 +31,10 @@ button {
 	display: inline-block;
 	padding: 0 15px;
 }
+.nav-links li:hover {
+	color: rgba(175, 0, 50, 0.6);
+	transition: all 0.3s ease 0s;
+}
 
 .nav-links li a {
 	transition: all 0.3s ease 0s;
