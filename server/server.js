@@ -19,7 +19,9 @@ app.get('/signup', (req, res) => {
 app.get('/login', (req, res) => {
 	res.render('pages/login/login');
 });
-
+app.get('/wishlist', (req, res) => {
+	res.render('pages/wishlist/wishlist');
+});
 app.get('/search', (req, res) => {
 	res.render('pages/search/search');
 });
