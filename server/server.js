@@ -1,7 +1,9 @@
+dotenv.config();
 import express from 'express';
 import path from 'path';
+import dotenv from 'dotenv';
 import { database } from './database';
-const PORT = process.env.port || 3000;
+
 const app = express();
 
 app.set('views', path.join(__dirname, '../views'));
