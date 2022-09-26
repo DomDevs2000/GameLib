@@ -3,11 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "server.js",
-	"type": "module",
 	"scripts": {
 		"test": "jest server.test.js",
-		"start": "node  server/server.js",
-		"dev": "nodemon  server/server.js"
+		"start": "node  -r esm server/server.js",
+		"dev": "nodemon  -r esm server/server.js"
 	},
 	"keywords": [],
 	"author": "",
