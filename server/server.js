@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-
+import { database } from './database';
 const PORT = process.env.port || 3000;
 const app = express();
 
@@ -10,7 +10,11 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '../CSS')));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.listen(PORT, () => console.log(`App opened on Port: ${PORT} `));
+database()
+	.then(async (connection) => {
+		app.listen(process.env.PORT, () => console.log('Server Running...'));
+	})
+	.catch((error) => console.error(error));
 
 //pug template - working for login/signup pages
 app.get('/signup', (req, res) => {
