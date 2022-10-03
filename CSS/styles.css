@@ -13,7 +13,6 @@ body {
 	color: #edf0f1;
 }
 
-
 /* searchbar css */
 .search {
 	display: flex;
@@ -24,7 +23,6 @@ body {
 	justify-content: center;
 	padding-bottom: 25px;
 	margin: 3px #edf0f1;
-
 }
 
 .search-bar {
@@ -32,31 +30,26 @@ body {
 	width: 100%;
 	max-width: 700px;
 	padding: 10px 20px;
-	background:#24252a;
+	background: #24252a;
 	border: 1px white;
 	border-radius: 25px;
 	font-size: 20px;
-	color:white;
-	font-family: "Silkscreen";
-	
-	
+	color: white;
+	font-family: 'Silkscreen';
 }
 
 .search-bar::placeholder {
 	font-size: 16px;
-	color:white;
-	
-
+	color: white;
 }
 .search-bar:focus {
-
 	border: rgba(175, 0, 50, 0.9);
 }
 
 .searchBtn {
 	width: 75px;
 	height: 50px;
-	background-color: rgba(175, 0, 50, 1); 
+	background-color: rgba(175, 0, 50, 1);
 	color: white;
 	border: none;
 	border-radius: 25px;
@@ -64,10 +57,8 @@ body {
 
 .searchBtn:hover {
 	cursor: pointer;
-	background-color: rgba(175, 0, 50, 0.6); ;
+	background-color: rgba(175, 0, 50, 0.6);
 }
-
-
 
 .header {
 	display: flex;
@@ -88,14 +79,14 @@ body {
 	padding: 15px;
 	border-radius: 5px;
 	margin: 15px;
-	border: 1.5px solid rgb(175, 0, 50)
+	border: 1.5px solid rgb(175, 0, 50);
 }
-.game-header{
+.game-header {
 	border: 1px solid white;
 	border-radius: 15px;
 }
 .game-desc {
-	font-size: 12px
+	font-size: 12px;
 }
 .game-image {
 	width: 500px;
@@ -110,7 +101,6 @@ body {
 	align-content: center;
 	align-self: center;
 	align-items: center;
-	
 }
 .web-link {
 	padding: 5px;
@@ -126,16 +116,29 @@ body {
 	border-radius: 5px;
 	margin: 15px;
 }
-.genre-header{
+.genre-header {
 	border: 1px solid white;
 	border-radius: 15px;
 }
 .genre-desc {
-	font-size: 12px
+	font-size: 12px;
 }
 .genre-image {
 	max-width: 500px;
 	max-height: 700px;
 	border-radius: 20px;
-	
+}
+
+.signup-text {
+	font-size: 12px;
+	border: none;
+}
+
+.signup-link {
+	text-decoration: solid;
+	list-style: circle;
+}
+
+.signup-link:hover {
+	color: rgba(175, 0, 50);
 }
