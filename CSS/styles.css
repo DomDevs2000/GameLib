@@ -142,3 +142,8 @@ body {
 .signup-link:hover {
 	color: rgba(175, 0, 50);
 }
+
+.error-message {
+	display: block;
+	color: red;
+}
