@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 database()
 	.then(async (connection) => {
-		app.listen(process.env.PORT, () => console.log('Server Running...'));
+		app.listen(process.env.PORT, () => console.log('Server Running On Port 8080...'));
 	})
 	.catch((error) => console.error(error));
 
@@ -71,7 +71,6 @@ async function fetchDeveloperBySlug(slug) {
 
 app.get('/developer/:slug', async (req, res) => {
 	const developer = await fetchDeveloperBySlug(req.params.slug);
-
 	res.render('pages/developer/developer', {
 		name: `${developer.name}`,
 		games: `${developer.games_count}`,
@@ -94,7 +93,6 @@ app.get('/platforms/:slug', async (req, res) => {
 	res.render('pages/platforms/platforms', {
 		name: `${platform.name}`,
 		year_start: `${platform.year_start}`,
-
 		games_count: `${platform.games_count}`,
 	});
 });
@@ -115,20 +113,17 @@ app.get('/genre/:slug', async (req, res) => {
 	res.render('pages/genre/genre', {
 		name: `${genre.name}`,
 		games: `${genre.games}`,
-		game_ount: `${genre.games_count}`,
+		games_count: `${genre.games_count}`,
 		image: `${genre.image_background}`,
 		description: `${genreDescription}`,
 	});
 });
 
-// testing pug template works
-app.get('/test', (req, res) => {
-	res.render('pages/search/search');
-});
-
 app.get('/home', (req, res) => {
 	res.render('pages/home/home');
 });
+
+
 // AUTH
 
 require('dotenv').config();
