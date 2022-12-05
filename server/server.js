@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
 import { database } from './database';
+import {fetchGameBySlug, fetchDeveloperBySlug, fetchPlatformsBySlug, fetchGenresBySlug} from "./apiClient";
 
 const app = express();
 
@@ -33,17 +34,10 @@ app.get('/search', (req, res) => {
 });
 
 //fetch and create game route
-async function fetchGameBySlug(slug) {
-	const res = await fetch(
-		`https://api.rawg.io/api/games/${slug}?key=073b26d4033244dfb59592b62994b56e&search_precise=true`
-	);
-	const game = await res.json();
-	return game;
-}
+
 
 app.get('/game/:slug', async (req, res) => {
 	const game = await fetchGameBySlug(req.params.slug);
-
 	//removes html tags from game description
 	let description = game.description;
 	let gameDescription = description.replace(/(<([^>]+)>)/gi, '');
@@ -61,13 +55,7 @@ app.get('/game/:slug', async (req, res) => {
 });
 
 //fetch and create developer route - still needs to be attached to searchbar and anchored to /developers/slug
-async function fetchDeveloperBySlug(slug) {
-	const res = await fetch(
-		`https://api.rawg.io/api/developers/${slug}?key=073b26d4033244dfb59592b62994b56e`
-	);
-	const developer = await res.json();
-	return developer;
-}
+
 
 app.get('/developer/:slug', async (req, res) => {
 	const developer = await fetchDeveloperBySlug(req.params.slug);
@@ -80,13 +68,7 @@ app.get('/developer/:slug', async (req, res) => {
 });
 
 //fetch and create platform route
-async function fetchPlatformsBySlug(slug) {
-	const res = await fetch(
-		`https://api.rawg.io/api/platforms/${slug}?key=073b26d4033244dfb59592b62994b56e`
-	);
-	const platforms = await res.json();
-	return platforms;
-}
+
 app.get('/platforms/:slug', async (req, res) => {
 	const platform = await fetchPlatformsBySlug(req.params.slug);
 
@@ -98,13 +80,7 @@ app.get('/platforms/:slug', async (req, res) => {
 });
 
 //fetch and create genre route
-async function fetchGenresBySlug(slug) {
-	const res = await fetch(
-		`https://api.rawg.io/api/genres/${slug}?key=073b26d4033244dfb59592b62994b56e&search_precise=true`
-	);
-	const genres = await res.json();
-	return genres;
-}
+
 
 app.get('/genre/:slug', async (req, res) => {
 	const genre = await fetchGenresBySlug(req.params.slug);
