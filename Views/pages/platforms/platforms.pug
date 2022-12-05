@@ -1,7 +1,9 @@
 extends ../../layouts/core-without-search.pug
-block content 
 
-    h1  #{name}
-    h1 Number of games on the #{name}: #{games_count}
-    h2 Release Date : #{year_start}
-    
+block content
+    div(class="game-container")
+        h1(class="game-header") #{name}
+        a(class ="web-link" href=website) #{website}
+        h3 Media :
+        div(class="img-container")
+            img(class="game-image" src=image)

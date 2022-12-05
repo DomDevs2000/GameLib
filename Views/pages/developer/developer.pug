@@ -1,6 +1,11 @@
 extends ../../layouts/core-without-search.pug
+
 block content
-    h1 #{name}
-    h3 Number of games developed: #{games}
-    img(src=image)
-    
+    div(class="game-container")
+        h1(class="game-header") #{name}
+        a(class ="web-link" href=website) #{website}
+        p number of games developed: #{games}
+        ul(class="games-list") #{gamesList}
+        h3 Media :
+        div(class="img-container")
+            img(class="game-image" src=image)
