@@ -7,3 +7,6 @@ or platforms. I created this using Vanilla JS, NodeJS with ExpressJS for the bac
 authentication, and SQL for database storage. Users can use the login/signup button to create an account or login to an
 existing account, and then create their own wishlists of games by marking each game as "Played, Playing or "Want To
 Play".
+
+To search use the navbar and select "Search Games" and use the searchbar to find a game, genre, developer or  platform.
+Click on the card and the site will take you to a page filled with information, ratings, links and images.
