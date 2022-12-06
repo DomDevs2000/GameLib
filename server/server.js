@@ -4,6 +4,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import {database} from './database';
 import {fetchGameBySlug, fetchDeveloperBySlug, fetchPlatformsBySlug, fetchGenresBySlug} from "./apiClient";
+require('dotenv').config();
 
 const app = express();
 
@@ -19,9 +20,12 @@ database()
     })
     .catch((error) => console.error(error));
 
+
 app.get('/signup', (req, res) => {
     res.render('pages/signup/signup');
 });
+
+
 app.get('/login', (req, res) => {
     res.render('pages/login/login');
 });
@@ -94,10 +98,11 @@ app.get('/home', (req, res) => {
     res.render('pages/home/home');
 });
 
+app.get('/',(req, res) => {
+    res.render('pages/home/home.pug');
+});
 
 // AUTH
-
-require('dotenv').config();
 
 const session = require('express-session');
 const passport = require('passport');
