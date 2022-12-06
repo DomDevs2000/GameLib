@@ -1,5 +1,6 @@
 # GameLib
-
+![Image 1](/screenshots/gamelib.png?raw=true "gamelib1")
+![Image 2](/screenshots/gamelib2.png?raw=true "gamelib2")
 ## Why I made this project
 
 In this project, Using a 3rd party API from RAWG, I created a video game library in which users can search for their favourite games, developers, genres
