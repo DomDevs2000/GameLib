@@ -96,7 +96,7 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/',(req, res) => {
-    res.render('pages/home/home.pug');
+    res.render('pages/home/home');
 });
 
 // AUTH
