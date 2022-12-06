@@ -2,7 +2,6 @@ dotenv.config();
 import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
-import {database} from './database';
 import {fetchGameBySlug, fetchDeveloperBySlug, fetchPlatformsBySlug, fetchGenresBySlug} from "./apiClient";
 require('dotenv').config();
 
@@ -14,11 +13,9 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '../CSS')));
 app.use(express.static(path.join(__dirname, '../public')));
 
-database()
-    .then(async (connection) => {
-        app.listen(process.env.PORT, () => console.log('Server Running On Port 8080...'));
-    })
-    .catch((error) => console.error(error));
+
+app.listen(process.env.PORT, () => console.log(`Server Running On ${process.env.PORT}...`));
+
 
 
 app.get('/signup', (req, res) => {
