@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, '../Views'));
 app.set('view engine', 'pug');
 
 app.use(express.static(path.join(__dirname, '../CSS')));
