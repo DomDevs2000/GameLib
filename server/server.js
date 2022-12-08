@@ -32,7 +32,7 @@ app.get('/search', (req, res) => {
 
 
 app.get('/game/:slug', async (req, res) => {
-    const game = await fetchGameBySlug(req.params.slug);
+    const game = await fetchGameBySlug(req.params.slug)
     //removes html tags from game description
     let description = game.description;
     let gameDescription = description.replace(/(<([^>]+)>)/gi, '');
@@ -68,6 +68,7 @@ app.get('/platforms/:slug', async (req, res) => {
         name: `${platform.name}`,
         year_start: `${platform.year_start}`,
         games_count: `${platform.games_count}`,
+        image: `${platform.image_background}`,
     });
 });
 
