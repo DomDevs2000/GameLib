@@ -1,14 +1,4 @@
 
-export function getGamesFromDeveloper(gameSlug) {
-	const games = getGames();
-	const game = games.filter((game) => {
-		return game.slug === gameSlug;
-	});
-	if (game.length) {
-		return game[0].slug;
-	}
-}
-
 export async function fetchGameBySlug(slug) {
 	const res = await fetch(
 		`https://api.rawg.io/api/games/${slug}?key=073b26d4033244dfb59592b62994b56e&search_precise=true`
@@ -25,6 +15,7 @@ export async function fetchDeveloperBySlug(slug) {
 		`https://api.rawg.io/api/developers/${slug}?key=073b26d4033244dfb59592b62994b56e`
 	);
 	const developer = await res.json();
+	console.log(developer)
 	return developer;
 }
 
