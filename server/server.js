@@ -16,12 +16,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.listen(process.env.PORT, () => console.log(`Server Running On ${process.env.PORT}...`));
 
-
-
 app.get('/signup', (req, res) => {
     res.render('pages/signup/signup');
 });
-
 
 app.get('/login', (req, res) => {
     res.render('pages/login/login');
@@ -32,7 +29,6 @@ app.get('/wishlist', (req, res) => {
 app.get('/search', (req, res) => {
     res.render('pages/search/search');
 });
-
 
 
 app.get('/game/:slug', async (req, res) => {
@@ -52,7 +48,6 @@ app.get('/game/:slug', async (req, res) => {
         alternate: `${game.background_image_additional}`,
     });
 });
-
 
 
 app.get('/developer/:slug', async (req, res) => {

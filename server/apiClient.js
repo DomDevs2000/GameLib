@@ -1,3 +1,4 @@
+
 export function getGamesFromDeveloper(gameSlug) {
 	const games = getGames();
 	const game = games.filter((game) => {
@@ -11,7 +12,9 @@ export function getGamesFromDeveloper(gameSlug) {
 export async function fetchGameBySlug(slug) {
 	const res = await fetch(
 		`https://api.rawg.io/api/games/${slug}?key=073b26d4033244dfb59592b62994b56e&search_precise=true`
-	);
+	).catch((error)=>{
+		console.log(error)
+	});
 	const game = await res.json();
 	return game;
 }
