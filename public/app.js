@@ -1,11 +1,12 @@
 // fetch games from api
-import * as dotenv from 'dotenv'
-
-dotenv.config()
+// import * as dotenv from 'dotenv'
+//
+// dotenv.config()
 
 export function fetchGames(page = 1, search = '') {
     const res = fetch(
-        `https://api.rawg.io/api/games?key=${process.env.API_KEY}&search=${search}&page=${page}`
+        // `https://api.rawg.io/api/games?key=${'b3c504ac423049a7ba58ea5c6405dfa3'}&search=${search}&page=${page}`
+        `/api/games?search=${search}&page=${page}`
     ).then((res) => res.json());
     return res;
 };
@@ -31,7 +32,8 @@ function renderGames(games) {
 // fetch develoeprs from api
 export function fetchDevelopers(page = 1, search = '') {
     const res = fetch(
-        `https://api.rawg.io/api/developers?key=${process.env.API_KEY}&search=${search}&page=${page}`
+        // `https://api.rawg.io/api/developers?key=${process.env.API_KEY}&search=${search}&page=${page}`
+            `/api/developers?search=${search}&page=${page}`
     ).then((res) => res.json());
     return res;
 }
@@ -58,7 +60,8 @@ function renderDevelopers(developers) {
 // fetch platforms from api
 export function fetchPlatforms(page = 1, search = '') {
     const res = fetch(
-        `https://api.rawg.io/api/platforms?key=${process.env.API_KEY}&search=${search}&page=${page}`
+        // `https://api.rawg.io/api/platforms?key=${process.env.API_KEY}&search=${search}&page=${page}`
+        `/api/platforms?search=${search}&page=${page}`
     ).then((res) => res.json());
     return res;
 }
@@ -85,7 +88,8 @@ function renderPlatforms(platforms) {
 // fetch genres from api
 export function fetchGenres() {
     const res = fetch(
-        `https://api.rawg.io/api/genres?key=${process.env.API_KEY}`
+        // `https://api.rawg.io/api/genres?key=${process.env.API_KEY}`
+            `/api/genres`
     ).then((res) => res.json());
     return res;
 }
