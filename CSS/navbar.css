@@ -2,154 +2,151 @@ h1,
 li,
 a,
 button {
-	font-family: 'Silkscreen', cursive;
-	font-size: 16px;
-	font-weight: 400;
-	color: #edf0f1;
-	text-decoration: none;
-	list-style: none;
+  font-family: "Silkscreen", cursive;
+  font-size: 16px;
+  font-weight: 400;
+  color: #edf0f1;
+  text-decoration: none;
+  list-style: none;
 }
 
 .navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	align-content: center;
-	padding: 20px;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
-	font-size: 35px;
-	cursor: pointer;
-
+  font-size: 35px;
+  cursor: pointer;
 }
 .nav-links {
-	list-style: none;
+  list-style: none;
 }
 .nav-links li {
-	display: inline-block;
-	padding: 0 15px;
+  display: inline-block;
+  padding: 0 15px;
 }
 .nav-links li:hover {
-	color: rgba(175, 0, 50, 0.6);
-	transition: all 0.3s ease 0s;
+  color: rgba(175, 0, 50, 0.6);
+  transition: all 0.3s ease 0s;
 }
 
 .nav-links li a {
-	transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .nav-links li a:hover {
-	transition: all 0.3s ease 0s;
-	color: rgb(175, 0, 50);
+  transition: all 0.3s ease 0s;
+  color: rgb(175, 0, 50);
 }
 
 .signup {
-	padding: 9px 25px;
-	background-color: rgba(175, 0, 50, 1);
-	border: none;
-	border-radius: 50px;
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
+  padding: 9px 25px;
+  background-color: rgba(175, 0, 50, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
 .signup:hover {
-	background-color: rgba(175, 0, 50, 0.6);
+  background-color: rgba(175, 0, 50, 0.6);
 }
 
 /* login css */
 
 .hero {
-	height: 100%;
-	width: 100%;
-	position: absolute;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .form-box {
-	width: 380px;
-	height: 480px;
-	margin: 6% auto;
-	position: relative;
-	background-color: #24252a;
-	border-radius: 15px;
-	padding: 15px;
+  width: 380px;
+  height: 480px;
+  margin: 6% auto;
+  position: relative;
+  background-color: #24252a;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 .button-box {
-	width: 220px;
-	margin: 35px auto;
-	position: relative;
-	border-radius: 20px;
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  border-radius: 20px;
 }
 
 .btn-toggle {
-	border-radius: 10px;
-	padding: 10px auto;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	position: relative;
-	background-color: rgba(175, 0, 50, 1);
+  border-radius: 10px;
+  padding: 10px auto;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  background-color: rgba(175, 0, 50, 1);
 }
 
 #btn {
-	top: 0;
-	left: 0;
-	position: absolute;
-	width: 110px;
-	height: 100%;
-	border-radius: 30px;
-	transition: 0.5s;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  border-radius: 30px;
+  transition: 0.5s;
 }
 
 .input-group {
-	top: 180px;
-	position: absolute;
-	width: 280px;
-	transition: 0.5s;
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
 }
 
 .input-field {
-	color: white;
-	width: 100%;
-	padding: 10px 0;
-	margin: 5px 0;
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	border-bottom: 1px solid #999;
-	outline: none;
-	background: transparent;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
 }
 
 .submit-btn {
-	padding: 10px 30px;
-	width: 85%;
-	display: block;
-	margin: auto;
-	
-	background-color: rgba(175, 0, 50, 1);
-	border: none;
-	border-radius: 30px;
-	outline: none;
+  padding: 10px 30px;
+  width: 85%;
+  display: block;
+  margin: auto;
+
+  background-color: rgba(175, 0, 50, 1);
+  border: none;
+  border-radius: 30px;
+  outline: none;
 }
 .submit-btn:hover {
-    background-color: rgba(175, 0, 50, 0.6);
-    cursor: pointer;
+  background-color: rgba(175, 0, 50, 0.6);
+  cursor: pointer;
 }
 
 .check-box {
-	margin: 30px 10px 30px 0px;
+  margin: 30px 10px 30px 0px;
 }
 
-
-
 #login {
-	left: 50px;
+  left: 50px;
 }
 
 #signup {
-	left: 450px;
+  left: 450px;
 }

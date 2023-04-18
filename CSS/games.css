@@ -1,19 +1,19 @@
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 h1 {
-	font-size: 55px;
-	padding: 5px;
+  font-size: 55px;
+  padding: 5px;
 }
 p {
-	padding: 15px;
-	border-bottom: 1px solid white;
+  padding: 15px;
+  border-bottom: 1px solid white;
 }
 
 #games-container,
 #platforms-container,
 #genres-container,
 #developers-container {
-	padding: 20px;
+  padding: 20px;
 }

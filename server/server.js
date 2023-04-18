@@ -1,133 +1,144 @@
-import express from 'express';
-import path from 'path';
-import dotenv from 'dotenv';
-import {fetchGameBySlug, fetchDeveloperBySlug, fetchPlatformsBySlug, fetchGenresBySlug} from "./apiClient";
+import express from "express";
+import path from "path";
+import dotenv from "dotenv";
+import {
+  fetchGameBySlug,
+  fetchDeveloperBySlug,
+  fetchPlatformsBySlug,
+  fetchGenresBySlug,
+} from "./apiClient";
 import fetch from "node-fetch";
 dotenv.config();
 
 const app = express();
 
-app.set('views', path.join(__dirname, '../Views'));
-app.set('view engine', 'pug');
+app.set("views", path.join(__dirname, "../Views"));
+app.set("view engine", "pug");
 
-app.use(express.static(path.join(__dirname, '../CSS')));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, "../CSS")));
+app.use(express.static(path.join(__dirname, "../public")));
 
+app.listen(process.env.PORT, () =>
+  console.log(`Server Running On ${process.env.PORT}...`)
+);
 
-app.listen(process.env.PORT, () => console.log(`Server Running On ${process.env.PORT}...`));
-
-app.get('/api/games', async (req, res) => {
-    const response = await fetch(`https://api.rawg.io/api/games?key=${process.env.API_KEY}`, {
-        method: 'get',
-        headers: {'Content-Type': 'application/json'}
-    });
-    const data = await response.json();
-    res.send(data)
-
+app.get("/api/games", async (req, res) => {
+  const response = await fetch(
+    `https://api.rawg.io/api/games?key=${process.env.API_KEY}`,
+    {
+      method: "get",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  const data = await response.json();
+  res.send(data);
 });
 
-app.get('/api/developers', async (req, res) => {
-    const response = await fetch(`https://api.rawg.io/api/developers?key=${process.env.API_KEY}`, {
-        method: 'get',
-        headers: {'Content-Type': 'application/json'}
-    });
-    const data = await response.json();
-    res.send(data)
-
-})
-app.get('/api/platforms', async (req, res) => {
-    const response = await fetch(`https://api.rawg.io/api/platforms?key=${process.env.API_KEY}`, {
-        method: 'get',
-        headers: {'Content-Type': 'application/json'}
-    });
-    const data = await response.json();
-    res.send(data)
-})
-app.get('/api/genres', async (req, res) => {
-    const response = await fetch(`https://api.rawg.io/api/genres?key=${process.env.API_KEY}`, {
-        method: 'get',
-        headers: {'Content-Type': 'application/json'}
-    });
-    const data = await response.json();
-    res.send(data)
-})
-app.get('/signup', (req, res) => {
-    res.render('pages/signup/signup');
+app.get("/api/developers", async (req, res) => {
+  const response = await fetch(
+    `https://api.rawg.io/api/developers?key=${process.env.API_KEY}`,
+    {
+      method: "get",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  const data = await response.json();
+  res.send(data);
+});
+app.get("/api/platforms", async (req, res) => {
+  const response = await fetch(
+    `https://api.rawg.io/api/platforms?key=${process.env.API_KEY}`,
+    {
+      method: "get",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  const data = await response.json();
+  res.send(data);
+});
+app.get("/api/genres", async (req, res) => {
+  const response = await fetch(
+    `https://api.rawg.io/api/genres?key=${process.env.API_KEY}`,
+    {
+      method: "get",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  const data = await response.json();
+  res.send(data);
+});
+app.get("/signup", (req, res) => {
+  res.render("pages/signup/signup");
 });
 
-app.get('/login', (req, res) => {
-    res.render('pages/login/login');
+app.get("/login", (req, res) => {
+  res.render("pages/login/login");
 });
-app.get('/wishlist', (req, res) => {
-    res.render('pages/wishlist/wishlist');
+app.get("/wishlist", (req, res) => {
+  res.render("pages/wishlist/wishlist");
 });
-app.get('/search', (req, res) => {
-    res.render('pages/search/search');
-});
-
-
-app.get('/game/:slug', async (req, res) => {
-    const game = await fetchGameBySlug(req.params.slug)
-    //removes html tags from game description
-    let description = game.description;
-    let gameDescription = description.replace(/(<([^>]+)>)/gi, '');
-
-    res.render('pages/game/game', {
-        name: `${game.name}`,
-        description: `${gameDescription}`,
-        rating: `${game.rating}`,
-        website: `${game.website}`,
-        platform: `${game.platform}`,
-        released: `${game.released}`,
-        image: `${game.background_image}`,
-        alternate: `${game.background_image_additional}`,
-    });
+app.get("/search", (req, res) => {
+  res.render("pages/search/search");
 });
 
+app.get("/game/:slug", async (req, res) => {
+  const game = await fetchGameBySlug(req.params.slug);
+  //removes html tags from game description
+  let description = game.description;
+  let gameDescription = description.replace(/(<([^>]+)>)/gi, "");
 
-app.get('/developer/:slug', async (req, res) => {
-    const developer = await fetchDeveloperBySlug(req.params.slug);
-    res.render('pages/developer/developer', {
-        name: `${developer.name}`,
-        games: `${developer.games_count}`,
-        gameslist: `${developer.games}`,
-        image: `${developer.image_background}`,
-    });
+  res.render("pages/game/game", {
+    name: `${game.name}`,
+    description: `${gameDescription}`,
+    rating: `${game.rating}`,
+    website: `${game.website}`,
+    platform: `${game.platform}`,
+    released: `${game.released}`,
+    image: `${game.background_image}`,
+    alternate: `${game.background_image_additional}`,
+  });
 });
 
-
-app.get('/platforms/:slug', async (req, res) => {
-    const platform = await fetchPlatformsBySlug(req.params.slug);
-
-    res.render('pages/platforms/platforms', {
-        name: `${platform.name}`,
-        year_start: `${platform.year_start}`,
-        games_count: `${platform.games_count}`,
-        image: `${platform.image_background}`,
-    });
+app.get("/developer/:slug", async (req, res) => {
+  const developer = await fetchDeveloperBySlug(req.params.slug);
+  res.render("pages/developer/developer", {
+    name: `${developer.name}`,
+    games: `${developer.games_count}`,
+    gameslist: `${developer.games}`,
+    image: `${developer.image_background}`,
+  });
 });
 
+app.get("/platforms/:slug", async (req, res) => {
+  const platform = await fetchPlatformsBySlug(req.params.slug);
 
-
-app.get('/genre/:slug', async (req, res) => {
-    const genre = await fetchGenresBySlug(req.params.slug);
-    let description = genre.description;
-    let genreDescription = description.replace(/(<([^>]+)>)/gi, '');
-    res.render('pages/genre/genre', {
-        name: `${genre.name}`,
-        games: `${genre.games}`,
-        games_count: `${genre.games_count}`,
-        image: `${genre.image_background}`,
-        description: `${genreDescription}`,
-    });
+  res.render("pages/platforms/platforms", {
+    name: `${platform.name}`,
+    year_start: `${platform.year_start}`,
+    games_count: `${platform.games_count}`,
+    image: `${platform.image_background}`,
+  });
 });
 
-app.get('/home', (req, res) => {
-    res.render('pages/home/home');
+app.get("/genre/:slug", async (req, res) => {
+  const genre = await fetchGenresBySlug(req.params.slug);
+  let description = genre.description;
+  let genreDescription = description.replace(/(<([^>]+)>)/gi, "");
+  res.render("pages/genre/genre", {
+    name: `${genre.name}`,
+    games: `${genre.games}`,
+    games_count: `${genre.games_count}`,
+    image: `${genre.image_background}`,
+    description: `${genreDescription}`,
+  });
 });
 
-app.get('/',(req, res) => {
-    res.render('pages/home/home');
+app.get("/home", (req, res) => {
+  res.render("pages/home/home");
+});
+
+app.get("/", (req, res) => {
+  res.render("pages/home/home");
 });
 
 // // AUTH
