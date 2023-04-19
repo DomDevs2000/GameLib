@@ -11,7 +11,18 @@ const logBucket = new aws.s3.Bucket("logBucket", {acl: "log-delivery-write"});
 // Create an AWS resource (S3 Bucket)
 const bucket = new aws.s3.Bucket("DomDevs-GameLib", {
     acl: "public-read",
-    policy: fs.readFileSync("policy.json"),
+    policy: {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::domdevs-gamelib-d10aacf/*"
+            }
+        ]
+    },
     website: {
         indexDocument: "index.html",
         errorDocument: "index.html",
