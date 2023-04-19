@@ -26,4 +26,4 @@ jobs:
           aws-region: eu-west-2
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync . s3://${{ secrets.AWS_BUCKET_NAME }}  --exclude './node_modules'
+        run: aws s3 sync . s3://${{ secrets.AWS_BUCKET_NAME }}  --exclude './node_modules/*' --exclude '.pulumi/*'
