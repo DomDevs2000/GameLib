@@ -1,0 +1,6 @@
+name: Dom-Devs-GameLib-
+runtime:
+  name: nodejs
+  options:
+    typescript: false
+description: Dom Devs GameLib Project On AWS S3
