@@ -1,42 +1,32 @@
 const pulumi = require("@pulumi/pulumi");
 const aws = require("@pulumi/aws");
-const awsx = require("@pulumi/awsx");
-const fs = require('fs');
 
-const ubuntu = aws.ec2.getAmi({
+
+const ami = aws.ec2.getAmi({
     mostRecent: true,
     filters: [
         {
             name: "name",
-            values: ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"],
+            values: ["al2023-ami-2023.0.20230419.0-kernel-6.1-x86_64"],
         },
         {
             name: "virtualization-type",
             values: ["hvm"],
         },
     ],
-    owners: ["099720109477"],
+    owners: ["137112412989"],
 });
-const web = new aws.ec2.Instance("web", {
-    ami: ubuntu.then(ubuntu => ubuntu.id),
-    instanceType: "t2.micro",
+
+const server = new aws.ec2.Instance("GameLibTest", {
+    ami: ami.then(ami => ami.id),
+    instanceType: "t3.micro",
     tags: {
-        Name: "GameLib",
+        Name: "GameLib-Test",
     },
 });
-const mainvpc = new aws.ec2.Vpc("mainvpc", {cidrBlock: "10.1.0.0/16"});
-const _default = new aws.ec2.DefaultSecurityGroup("default", {
-    vpcId: mainvpc.id,
-    ingress: [{
-        protocol: "-1",
-        self: true,
-        fromPort: 0,
-        toPort: 0,
-    }],
-    egress: [{
-        fromPort: 0,
-        toPort: 0,
-        protocol: "-1",
-        cidrBlocks: ["0.0.0.0/0"],
-    }],
-});
+
+
+module.exports.publicIp = server.publicIp;
+module.exports.publicHostName = server.publicDns;
+
+
